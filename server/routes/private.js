@@ -3,8 +3,9 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 
 // Protected route
-router.get('/', auth, (req, res) => {
-  res.json({ message: `Welcome! This is a protected route. User ID: ${req.user}` });
+router.get('/private', auth, (req, res) => {
+  res.json({ message: `Welcome to your dashboard, User ID: ${req.user}` });
 });
+
 
 module.exports = router;
